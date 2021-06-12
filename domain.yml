@@ -1,0 +1,212 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - data science
+  - cloud expert
+  - web developer
+  - experience
+  - fresher
+
+slots:
+  first_name:
+    type: unfeaturized
+  full_name:
+    type: unfeaturized
+  mobile_number:
+    type: unfeaturized
+  mail:
+    type: unfeaturized
+  apply_for:
+    type: unfeaturized
+  experience:
+    type: unfeaturized
+  salary_satisfied:
+    type: unfeaturized
+  relocate:
+    type: unfeaturized
+  knowledge:
+    type: unfeaturized
+  applied_for:
+    type: unfeaturized
+  data_fresher_salary_satisfied:
+    type: unfeaturized
+  data_fresher_knowledge:
+    type: unfeaturized
+  web_fresher_salary_satisfied:
+    type: unfeaturized
+  web_developer_fresher_knowledge:
+    type: unfeaturized
+  web_experience_salary_satisfied:
+    type: unfeaturized
+  web_developer_experience_knowledge:
+    type: unfeaturized
+  web_experience_year:
+    type: unfeaturized
+  data_experience_salary_satisfied:
+    type: unfeaturized
+  data_developer_experience_knowledge:
+    type: unfeaturized
+  data_experience_year:
+    type: unfeaturized
+  cloud_experience_salary_satisfied:
+    type: unfeaturized
+  cloud_developer_experience_knowledge:
+    type: unfeaturized
+  cloud_experience_year:
+    type: unfeaturized
+
+
+responses:
+  utter_greet:
+  - text: Hey! Welcome to XYZ's recruitment channel, I'm Sara, your virtual recruiter for first round of interview.
+  utter_ask_first_name:
+  - text: What's your first name?
+
+  utter_iamabot:
+  - text: I am an AI based recruitment bot, for taking interviews just like this one.
+  utter_interview:
+    - text: So {name}, are you ready for interview??
+  utter_job_options:
+  - buttons:
+    - payload: /data science
+      title: Data science
+    - payload: /web developer
+      title: Web developer
+    - payload: /cloud expert
+      title: Cloud expert
+    text: Currently we are hiring candidates for below domain -
+  utter_experience_fresher:
+    - text: Are you fresher or experienced?
+  utter_ask_data_fresher_knowledge:
+    - text: "We require basic knowledge of - ML,DL,Tensforflow/Keras,Flask,EDA. Do you all have these?"
+  utter_data_asking_knowledge1:
+    - text: Do you have all these above?
+  utter_relocate:
+    - text: So {first_name}, are you willing to relocate accross any cities of India?
+  utter_ask_data_fresher_salary_satisfied:
+    - text: Salary for fresher's can be upto 6 - 8 LPA. Are you ok with it?
+  utter_congo:
+    - text: Congradulations {first_name}, you creaked first round of interview.
+  utter_ask_full_name:
+    - text: Please share your full name.
+  utter_ask_mobile_number:
+    - text: What is your 10 digit mobile number?
+  utter_ask_mail:
+    - text: Share your mail address, where we can forward next round of interview details.
+  utter_ask_apply_for:
+    - text: One last thing, just for verification share for which domain you are applied for and fresher or experienced.
+  utter_confirmation:
+    - text: "{a}"
+  utter_deny:
+    - text: "{first_name}, actually these are our mandate parameters. I'm really sorry but I have to reject your application. Have a nice day !"
+  utter_ask_data_developer_experience_knowledge:
+    - text: We required a strong knowledge of Machine learning, NLP with the libraries BERT,GPT,attantion based system, Flask,Docker.
+  utter_ask_data_experience_year:
+    - text: Well, we are hiring the data science domain expertise. XYZ is looking for more than 4 years of experience in the domain. Are you one of them?
+  utter_ask_data_experience_salary_satisfied:
+    - text: Our company is offering upto 20 LPA depanding on your knowledge base and privious organization's salary. Do you agree?
+  utter_cloud_fresher:
+    - text: Sorry {first_name}, as of now there is no recuirement for freshers in cloud domain. Advice you to contact few days later. Have a nice day.
+  utter_ask_cloud_experience_year:
+    - text: Well, we have opened our window for candidates who have 5+ years of experience in cloud platforms. Are you one of them?
+  utter_ask_cloud_developer_experience_knowledge:
+    - text: XYZ is looking for heavy expertise in AWS,GCP,AZURE platforms. Have you knowledge both of these?
+  utter_ask_cloud_experience_salary_satisfied:
+    - text: Our company is offereing cloud expertise upto 20 LPA. Are you interested?
+  utter_ask_web_developer_fresher_knowledge:
+    - text: "We require the knowledge of web development, html tagging, UI desiging, hosting for the freshers. Do you know all these?"
+  utter_ask_web_fresher_salary_satisfied:
+    - text: Well, we are offereing upto 6 LPA based on interview, do you agree?
+  utter_ask_web_experience_year:
+    - text: XYZ requires minimum 10 years of experience in Web development domain. Do you have this much of experince?
+  utter_ask_web_developer_experience_knowledge:
+    - text: We demand the candidate should have PHP, ASP.NET, Javascript or Ruby on Rails, HTTP/CSS. Have you all the knowledge?
+  utter_ask_web_experience_salary_satisfied:
+    - text: We are offering upto 15 LPA based on experience and last salary. Are you ok with it?
+  utter_ask_knowledge:
+    - text: Do you have knowledge?
+  utter_ask_salary_satisfied:
+    - text: Do you satiesfied with the salary?
+  utter_ask_relocate:
+    - text: DO you want to relocate?
+  utter_ask_experience:
+    - text: Do you have experience?
+  utter_ask_applied_for:
+    - buttons:
+      - payload: /data science
+        title: Data science
+      - payload: /web developer
+        title: Web developer
+      - payload: /cloud expert
+        title: Cloud expert
+      text: Currently we are hiring candidates for below domain -
+  utter_data_science:
+    - text:  So, you want to apply for Data scientist role?
+  utter_web:
+    - text: So, you want to apply for Web developer role?
+  utter_cloud:
+    - text: So, you want to apply for Cloud developer role?
+
+
+actions:
+  - utter_data_science
+  - utter_web
+  - utter_cloud
+  - utter_ask_applied_for
+#  - utter_ask_fresher_experience
+  - utter_ask_knowledge
+  - utter_ask_salary_satisfied
+  - utter_ask_relocate
+  - utter_ask_experience
+  - utter_greet
+  - utter_ask_first_name
+  - utter_iamabot
+  - utter_interview
+  - utter_experience_fresher
+  - utter_ask_data_fresher_knowledge
+  - utter_data_asking_knowledge1
+  - utter_relocate
+  - utter_ask_data_fresher_salary_satisfied
+  - utter_congo
+  - utter_ask_full_name
+  - utter_ask_mail
+  - utter_ask_apply_for
+  - utter_ask_mobile_number
+  - utter_confirmation
+  - utter_deny
+  - utter_ask_data_developer_experience_knowledge
+  - utter_ask_data_experience_year
+  - utter_ask_data_experience_salary_satisfied
+  - utter_cloud_fresher
+  # - utter_cloud_experience_year
+  # - utter_cloud_experience_knowledge
+  #- utter_web_fresher_knowledge
+  #- utter_web_fresher_package
+  - utter_ask_web_experience_year
+  - utter_ask_web_developer_experience_knowledge
+  - utter_ask_web_experience_salary_satisfied
+  - utter_ask_web_developer_fresher_knowledge
+  - utter_ask_web_fresher_salary_satisfied
+  - utter_ask_cloud_experience_salary_satisfied
+  - utter_ask_cloud_developer_experience_knowledge
+  - utter_ask_cloud_experience_year
+forms:
+  - product_search_form_first_name
+  - product_search_form_full_info
+  - product_search_form_full_info_trail
+  - product_search_domain
+  - product_search_form_data_science_fresher
+  - product_search_form_web_fresher
+  - product_search_form_web_experience
+  - product_search_form_data_experience
+  - product_search_form_cloud_experience
+
+
+
